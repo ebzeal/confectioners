@@ -6,8 +6,11 @@ import "./App.css";
 
 import HomePage from "./views/homepage/homepage.component";
 import ShopPage from "./views/shop/shop.component";
-import Header from "./components/header/header.component";
 import SignInSignUp from "./views/signin-signup/signin-signup.component";
+import CheckoutPage from "./views/checkout/checkout.component";
+
+import Header from "./components/header/header.component";
+
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selector";
@@ -53,6 +56,7 @@ class App extends Component {
               this.props.currentUser ? <Redirect to="/" /> : <SignInSignUp />
             }
           />
+          <Route path="/checkout" component={CheckoutPage} />
         </Switch>
       </div>
     );
