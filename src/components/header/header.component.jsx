@@ -19,11 +19,11 @@ import {
 
 const Header = ({ currentUser, cart_hidden }) => (
   <HeaderContainer>
-    <LogoContainer>
+    <LogoContainer to="/">
       <Logo className="logo" />
     </LogoContainer>
     <OptionsContainer>
-      <OptionLink>SHOP</OptionLink>
+      <OptionLink to="/shop">SHOP</OptionLink>
       <OptionLink>CONTACT</OptionLink>
 
       {currentUser ? (

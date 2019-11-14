@@ -14,13 +14,11 @@ const selectShop = state => state.shop;
 export const selectVendors = createSelector(selectShop, shop => shop.vendors);
 
 export const selectVendorForPreview = createSelector(selectVendors, vendors =>
-  Object.keys(vendors).map(key => vendors[key])
+  vendors ? Object.keys(vendors).map(key => vendors[key]) : []
 );
 
 export const selectVendor = collectionUrlParam =>
-  createSelector(
-    selectVendors,
-    vendors =>
-      // vendors.find(vendor => vendor.id === VENDOR_ID_MAP[collectionUrlParam])
-      vendors[collectionUrlParam]
+  createSelector(selectVendors, vendors =>
+    // vendors.find(vendor => vendor.id === VENDOR_ID_MAP[collectionUrlParam])
+    vendors ? vendors[collectionUrlParam] : null
   );
