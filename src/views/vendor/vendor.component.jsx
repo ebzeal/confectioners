@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
+import { createStructuredSelector } from 'reselect';
 
-import {
-  firestore,
-  convertCollectionsSnapshotToMap
-} from "../../firebase/firebase.utils";
-
-import { updateVendors } from "../../redux/shop/shop.action";
+import { fetchVendorsStartAsync } from "../../redux/shop/shop.action";
 import CollectionPage from "../collection/collection.component";
 import WithSpinner from "../../components/with-spinner/with-spinner.component";
+import { selectIsVendorFetching } from "../../redux/shop/shop.selectors";
 
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
@@ -21,21 +18,12 @@ class VendorPage extends Component {
   unsubscribeFromSnapshot = null;
 
   componentDidMount() {
-    const { updateVendors } = this.props;
-    const collectionRef = firestore.collection("vendors");
-
-    collectionRef.onSnapshot(async snapshot => {
-      const vendorsMap = convertCollectionsSnapshotToMap(snapshot);
-      updateVendors(vendorsMap);
-      this.setState({
-        loading: false
-      });
-    });
+    const { fetchVendorsFromStore } = this.props;
+    fetchVendorsFromStore();
   }
 
   render() {
-    const { match } = this.props;
-    const { loading } = this.state;
+    const { match, loading } = this.props;
     // console.log("TCL: VendorPage -> match", match);
     return (
       <div className="shop-page">
@@ -52,7 +40,11 @@ class VendorPage extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  updateVendors: vendorsMap => dispatch(updateVendors(vendorsMap))
+  fetchVendorsFromStore: () => dispatch(fetchVendorsStartAsync())
 });
 
-export default connect(null, mapDispatchToProps)(VendorPage);
+const mapStateToProps = createStructuredSelector({
+  loading: selectIsVendorFetching
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(VendorPage);

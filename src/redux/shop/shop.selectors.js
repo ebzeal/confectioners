@@ -22,3 +22,13 @@ export const selectVendor = collectionUrlParam =>
     // vendors.find(vendor => vendor.id === VENDOR_ID_MAP[collectionUrlParam])
     vendors ? vendors[collectionUrlParam] : null
   );
+
+export const selectIsVendorFetching = createSelector(
+  [selectShop],
+  shop => shop.isFetching
+)
+
+export const selectIsVendorLoaded = createSelector(
+  selectShop,
+  vendors => !!shop.vendors
+)
