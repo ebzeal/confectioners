@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
-import { createStructuredSelector } from 'reselect'
 
 
-import CollectionsOverviewContainer from "../../components/collections-overview/collections-overview.component";
-import CollectionPageContainer from "../collection/collection.component";
+import CollectionsOverviewContainer from "../../components/collections-overview/collections-overview.container";
+import CollectionPageContainer from "../collection/collection.container";
 import { fetchVendorsStartAsync } from "../../redux/shop/shop.action";
 
 
@@ -21,7 +20,6 @@ class ShopPage extends Component {
     // });
     // The above code was changed to a promise based format using redux thunk
     const { fetchVendorsFromStore } = this.props;
-    console.log("TCL: ShopPage -> componentDidMount -> props", this.props)
     fetchVendorsFromStore()
   }
 
@@ -33,8 +31,8 @@ class ShopPage extends Component {
         <Route
           exact
           path={`${match.path}`}
-          Component={CollectionsOverviewContainer}  
-        }
+          component={CollectionsOverviewContainer}
+
         />
         <Route
           exact
@@ -43,7 +41,7 @@ class ShopPage extends Component {
           //   <CollectionPageWithSpinner isLoading={!vendorsLoaded} {...props} />
           // )   
           // }
-          Component={CollectionPageContainer}
+          component={CollectionPageContainer}
         />
       </div>
     );
@@ -55,4 +53,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
+export default connect(null, mapDispatchToProps)(ShopPage);
