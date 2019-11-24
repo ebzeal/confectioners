@@ -7,7 +7,6 @@ import { selectVendor } from "../../redux/shop/shop.selectors";
 import "./collection.styles.scss";
 
 const CollectionPage = ({ vendor }) => {
-  // console.log("TCL: CollectionPage -> vendor", vendor);
   const { title, items } = vendor;
   return (
     <div className="collection-page ">
