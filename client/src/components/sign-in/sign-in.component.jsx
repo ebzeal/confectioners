@@ -21,8 +21,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   const handleSubmit = async event => {
     event.preventDefault();
 
-    console.log("TCL: SignIn -> email", email);
-    console.log("TCL: SignIn -> password", password);
+    // console.log("TCL: SignIn -> email", email);
+    // console.log("TCL: SignIn -> password", password);
     emailSignInStart(email, password);
   };
 

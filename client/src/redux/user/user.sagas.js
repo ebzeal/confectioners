@@ -42,7 +42,6 @@ function* onGoogleSignInStart() {
 }
 
 function* signInWithEmail({ payload: { email, password } }) {
-  console.log("TCL: function*signInWithEmail -> email", email);
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
     yield getSnapshotFromUserAuth(user);

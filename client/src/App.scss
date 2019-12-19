@@ -1,0 +1,20 @@
+$header-font: 'Cinzel', serif;
+$body-font: 'Lato', sans-serif;
+$red: red;
+
+body {
+  font-family: $body-font;
+} 
+
+h1,h2,h3,h4 {
+  font-family: $header-font;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}

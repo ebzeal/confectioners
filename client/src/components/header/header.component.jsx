@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
+import TopNav from '../top-nav/top-nav.component';
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDrodown from "../cart-dropdown/cart-dropdown.component";
 import { selectCartHidden } from "../../redux/cart/cart.selector";
@@ -18,6 +19,8 @@ import {
 } from "./header.styles";
 
 const Header = ({ currentUser, cart_hidden, userSignOut }) => (
+  <div>
+  <TopNav />
   <HeaderContainer>
     <LogoContainer to="/">
       <Logo className="logo" />
@@ -37,6 +40,7 @@ const Header = ({ currentUser, cart_hidden, userSignOut }) => (
     </OptionsContainer>
     {!cart_hidden ? <CartDrodown /> : null}
   </HeaderContainer>
+  </div>
 );
 
 const mapStateToProps = createStructuredSelector({
