@@ -2,23 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { toggleCartHidden } from "../../redux/cart/cart.actions";
-import { selectCartItemsCount } from "../../redux/cart/cart.selector";
+import { selectCartItemsCount, selectCartTotal } from "../../redux/cart/cart.selector";
 
-import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
+import { ShoppingCartIcon} from './cart-icon.styles'
 
-import "./cart-icon.styles.scss";
 
 const CartIcon = (
-  { toggleCartHidden, itemCount } // destructuring toggleCartHidden from this.state, remember that mapDispatchToProps has made it available in the state
+  { toggleCartHidden, itemCount, cartTotalPrice } // destructuring toggleCartHidden from this.state, remember that mapDispatchToProps has made it available in the state
 ) => (
-  <div className="cart-icon">
-    <ShoppingIcon className="shopping-icon" onClick={toggleCartHidden} />
-    <span className="item-count">{itemCount}</span>
-  </div>
+  <><ShoppingCartIcon  onClick={toggleCartHidden}> <i class="fas fa-shopping-cart"></i> <span> {itemCount} ITEMS: N{cartTotalPrice} </span></ShoppingCartIcon>
+  </>
 );
 
 const mapStateToProps = state => ({
-  itemCount: selectCartItemsCount(state)
+  itemCount: selectCartItemsCount(state),
+  cartTotalPrice: selectCartTotal(state)
 });
 
 const mapDispatchToProps = dispatch => ({

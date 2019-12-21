@@ -46,6 +46,12 @@ const UserLinks = styled.div`
             font-weight: bold;
         }
     }
+
+    @media only screen 
+    and (max-device-width: 425px) {
+        right:5%;
+        width:45%;
+  }
 `
 export {
     UserIconContainer,

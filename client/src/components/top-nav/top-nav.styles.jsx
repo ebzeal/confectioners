@@ -9,6 +9,13 @@ const TopNavContainer = styled.div`
     flex-flow: row wrap;
     justify-content: space-between;
     padding: 10px 5%;
+
+    @media only screen 
+    and (max-device-width: 414px) {
+       height: 60px;
+       font-size: 10px;
+  }
+
     `
     
 const MenuContainer = styled.div`
@@ -42,7 +49,7 @@ const MenuLink = styled(Link)`
 
     :hover {
         color: rgba(242, 122, 84, 1)
-    }
+    };
 `
 
 

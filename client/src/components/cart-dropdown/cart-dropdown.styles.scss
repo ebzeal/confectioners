@@ -7,9 +7,16 @@
   padding: 20px;
   border: 1px solid black;
   background-color: white;
-  top: 90px;
+  top: 100px;
   right: 40px;
   z-index: 5;
+
+  @media only screen 
+  and (max-device-width: 570px) {
+    top: 150px;
+    right: 20%;
+    width: 60%;
+}
 
   .empty-message {
     font-size: 18px;
