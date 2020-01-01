@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 
 const buttonStyles = css`
-  background-color: black;
-  color: white;
+  background: #F27A54;
+  border-radius: 10px;
+  color: black;
 
   &:hover {
     background-color: white;
     color: black;
-    border: 1px solid black;
   }
 `;
 
@@ -49,8 +49,6 @@ export const CustomButtonContainer = styled.button`
   line-height: 20px;
   padding: 0 35px 0 35px;
   font-size: 13px;
-  text-transform: uppercase;
-  font-family: "Open Sans Condensed";
   font-weight: bolder;
   border: none;
   cursor: pointer;
