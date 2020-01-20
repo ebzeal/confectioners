@@ -3,18 +3,42 @@
     flex-direction: column;
   
     .title {
-      font-size: 38px;
+      font-size: 30px;
       margin: 0 auto 30px;
     }
   
     .items {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      // grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
       grid-gap: 10px;
   
       & .collection-item {
         margin-bottom: 30px;
       }
+
+      
+    @media only screen 
+    and (min-device-width: 220px) 
+    and (max-device-width: 925px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      // grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+        }
+    }
+
+    
+  }
+
+  .vendor-detail {
+    display: flex;
+    margin: 40px auto;
+    text-align: justify;
+
+
+    img {
+      max-width: 40%;
+      border-radius: 10px;
+      margin-left: 25px;
     }
   }
   

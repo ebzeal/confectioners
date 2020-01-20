@@ -24,7 +24,6 @@ class VendorPage extends Component {
 
   render() {
     const { match, loading } = this.props;
-    // console.log("TCL: VendorPage -> match", match);
     return (
       <div className="shop-page">
         <Route

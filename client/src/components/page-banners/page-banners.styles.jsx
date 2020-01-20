@@ -6,8 +6,9 @@ const BannerContainer = styled.div`
     padding: 0 5%;
     background: #FFFFFF;
     background-image:url(${props => props.bgImage || "https://res.cloudinary.com/dxehksqg1/image/upload/v1576956180/confectioners/confectioner-banner1_ky1lzh.png"});
+    background-size: cover;
     box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
-    margin-bottom:78px;
+    margin-bottom:18px;
 
     
     @media only screen 

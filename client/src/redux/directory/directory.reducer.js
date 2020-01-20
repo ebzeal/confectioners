@@ -2,35 +2,50 @@ const INITIAL_STATE = {
   vendors: [
     {
       name: "Cherry Cakes",
-      imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
+      imageUrl:
+        "https://res.cloudinary.com/dxehksqg1/image/upload/v1579209608/confectioners/Vendors/bangkok-mandarin-shop-2014-1_u5rlnt.webp",
       id: 1,
-      linkUrl: "vendor/cherry-cakes"
+      linkUrl: "shop/cherry-cakes"
     },
     {
       name: "Freddy Fingers",
-      imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
+      imageUrl:
+        "https://res.cloudinary.com/dxehksqg1/image/upload/v1579209587/confectioners/Vendors/phuket-cafe_z6wjny.jpg",
       id: 2,
-      linkUrl: "vendor/freddy-fingers"
+      linkUrl: "shop/freddy-fingers"
     },
     {
       name: "Modley Bakes",
-      imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
+      imageUrl:
+        "https://res.cloudinary.com/dxehksqg1/image/upload/v1579209582/confectioners/Vendors/a686ac0d4d77c645e6dc9fb40ca8bad9_jkqe8o.jpg",
       id: 3,
-      linkUrl: "vendor/modley-bakes"
+      linkUrl: "shop/modley-bakes"
     },
     {
       name: "Butter Cuppleys",
-      imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+      imageUrl:
+        "https://res.cloudinary.com/dxehksqg1/image/upload/v1579209567/confectioners/Vendors/cake-shop-business_inxluu.jpg",
       size: "large",
       id: 4,
-      linkUrl: "vendor/butter-cuppleys"
+      linkUrl: "shop/butter-cuppleys"
     },
+
+    {
+      name: "Blaise Butters",
+      imageUrl:
+        "https://res.cloudinary.com/dxehksqg1/image/upload/v1579209522/confectioners/Vendors/cropped-bakery_numlji.jpg",
+      size: "large",
+      id: 4,
+      linkUrl: "shop/blaise-butters"
+    },
+
     {
       name: "Pink Foods",
-      imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+      imageUrl:
+        "https://res.cloudinary.com/dxehksqg1/image/upload/v1579209528/confectioners/Vendors/P1010180__71599.1429012214_pjcoz9.webp",
       size: "large",
       id: 5,
-      linkUrl: "vendor/pink-foods"
+      linkUrl: "shop/pink-foods"
     }
   ]
 };

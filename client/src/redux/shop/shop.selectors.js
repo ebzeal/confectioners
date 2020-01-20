@@ -28,7 +28,7 @@ export const selectIsVendorFetching = createSelector(
   shop => shop.isFetching
 )
 
-export const selectIsVendorLoaded = createSelector(
+export const selectIsShopLoaded = createSelector(
   [selectShop],
   shop => !!shop.vendors
 )

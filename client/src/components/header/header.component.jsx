@@ -28,7 +28,7 @@ const Header = ({ currentUser, cart_hidden, userSignOut }) => (
     </LogoContainer>
     <OptionsContainer>
       <OptionLink to="/shop">SHOP</OptionLink>
-      <OptionLink to="/">VENDORS</OptionLink>
+      <OptionLink to="/vendors">VENDORS</OptionLink>
       <OptionLink to="/">OFFERS</OptionLink>
       <OptionLink to="/">SALES</OptionLink>
       <OptionDivider> | </OptionDivider>

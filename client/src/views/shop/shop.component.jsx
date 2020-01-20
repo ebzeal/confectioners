@@ -6,13 +6,16 @@ import CollectionsOverviewContainer from "../../components/collections-overview/
 import CollectionPageContainer from "../collection/collection.container";
 import { fetchVendorsStart } from "../../redux/shop/shop.action";
 
+import { BodyContainer } from '../../index.styles';
+
+
 const ShopPage = ({ fetchVendorsFromStore, match }) => {
   useEffect(() => {
     fetchVendorsFromStore();
   }, [fetchVendorsFromStore]);
 
   return (
-    <div className="shop-page">
+    <BodyContainer>
       <Route
         exact
         path={`${match.path}`}
@@ -23,7 +26,7 @@ const ShopPage = ({ fetchVendorsFromStore, match }) => {
         path={`${match.path}/:vendorId`}
         component={CollectionPageContainer}
       />
-    </div>
+    </BodyContainer>
   );
 };
 
