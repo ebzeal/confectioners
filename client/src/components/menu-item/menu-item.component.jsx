@@ -4,10 +4,11 @@ import { withRouter } from "react-router-dom";
 import "./menu-item.styles.scss";
 
 const MenuItem = ({ name, imageUrl, size, history, linkUrl, match }) => {
+  const newPath = match.url.split('/')
   return (
     <div
       className={`${size} menu-item`}
-      onClick={() => history.push(`${match.url}${linkUrl}`)}
+      onClick={() => history.push(`${newPath[0]}/${linkUrl}`)}
     >
       <div
         className="background-image"

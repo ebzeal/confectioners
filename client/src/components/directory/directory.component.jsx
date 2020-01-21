@@ -9,11 +9,12 @@ import { selectDirectoryVendors } from "../../redux/directory/directory.selector
 
 import "./directory.styles.scss";
 
-const Directory = ({ vendors, heading, sideLinks }) => (
+const Directory = ({ vendors, heading, sideLinks, limit}) => (
   <>
     <SectionHeading heading={heading} sideLinks={sideLinks} linkedPage="vendors" />
     <div className="directory-menu">
-      {vendors.slice(0,4).map(({ id, ...otherSectionProps }) => (
+      {
+       (!limit ? vendors.slice(0,4) : vendors).map(({ id, ...otherSectionProps }) => (
         <MenuItem key={id} {...otherSectionProps} />
       ))}
     </div>

@@ -7,7 +7,7 @@ import { BodyContainer } from '../../index.styles';
 
 const VendorsPage = () => (
   <BodyContainer>
-    <Directory heading="Vendors" />
+    <Directory heading="Vendors" limit='false'/>
   </BodyContainer>
 );
 

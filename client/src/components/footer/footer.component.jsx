@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { ReactComponent as Logo } from "../../assets/confectioners.svg";
+import Disclaimer from '../disclaimer/disclaimer';
 
 
 import {FooterContainer, BoxOne, FooterBox} from './footer.styles';
@@ -49,6 +50,9 @@ const Footer = () => (
                 <li> <i class="fab fa-facebook-square"></i> Facebook </li>
             </ul>
         </FooterBox>
+        
+        <Disclaimer  color='#ffffff' topMargin='40px' bottomMargin='0px' />
+
     </FooterContainer>
 );
 

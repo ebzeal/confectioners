@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import {connect} from 'react-redux';
+
+import { signOutStart } from "../../../redux/user/user.actions";
 
 import {UserIconContainer, UserLinks} from './user-icon.styles'
 
-const UserIcon = ({image}) => {
+const UserIcon = ({image, userSignOut}) => {
 
     const [userLinks, setUserLinks] = useState(false);
     
@@ -14,9 +17,13 @@ const UserIcon = ({image}) => {
             <a>My profile</a>
             <a>My Account</a>
             <a>My Cart</a>
-            <a>Logout</a>
+            <a onClick={userSignOut}>Logout</a>
         </UserLinks> : '' }
     </UserIconContainer>
 )}
 
-export default UserIcon;
+const mapDispatchToProps = dispatch => ({
+    userSignOut: () => dispatch(signOutStart())
+  });
+
+export default connect(null, mapDispatchToProps)(UserIcon);
